@@ -7,12 +7,7 @@ const Navbar = () => {
       {/* {LOGO} */}
 
       <div className="items-center flex gap-4 text-xl font-bold">
-        <img
-          src="/logo.jpg"
-          alt="/logo.jpg"
-          className="w-d h-8 rounded-full"
-          alt=""
-        />
+        <img src="/logo.jpg" className="w-d h-8 rounded-full" alt="" />
         <span>ptblog</span>
       </div>
 
@@ -22,11 +17,11 @@ const Navbar = () => {
           className="cursor-pointer text-2xl"
           onClick={() => setOpen(prev => !prev)}
         >
-          {open ? "X" : "="}
+          {open ? "X" : "☰"}
         </div>
         {/* mbl link list */}
         <div
-          className={`w-full h-screen flex flex-col items-center justify-center absolute gap-6 font-medium text-lgtop-16  ${open ? "right-0" : "right-[-100%]"} transition-all duration-600`}
+          className={`w-full h-screen flex flex-col items-center justify-center absolute gap-6 font-medium text-lg top-16  ${open ? "right-0" : "right-[-100%]"} transition-all duration-700`}
         >
           <a href="/">Home</a>
           <a href="/">About</a>
