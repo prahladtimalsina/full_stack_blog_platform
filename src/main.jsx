@@ -9,7 +9,17 @@ import RegisterPage from "./routes/RegisterPage.jsx";
 import PostListPage from "./routes/PostListPage.jsx";
 import SinglePostPage from "./routes/SinglePostPage.jsx";
 import MainLayout from "./layouts/MainLayout.jsx";
+import { ClerkProvider } from "@clerk/react";
 
+// Ensure that the publishable key is available
+const PUBlISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY;
+
+// Throw an error if the publishable key is missing
+if (!PUBlISHABLE_KEY) {
+  throw new Error("Missing Publishable Key");
+}
+
+// Define the routes for the application
 const router = createBrowserRouter([
   {
     element: <MainLayout />,
@@ -53,6 +63,8 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <RouterProvider router={router} />
+    <ClerkProvider publishableKey={PUBlISHABLE_KEY}>
+      <RouterProvider router={router} />
+    </ClerkProvider>
   </StrictMode>,
 );

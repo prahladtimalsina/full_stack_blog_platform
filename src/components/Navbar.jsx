@@ -1,11 +1,12 @@
 import { useState } from "react";
 import ImageKit from "./ImageKit";
 import { Link } from "react-router-dom";
+import { Show, SignInButton, SignUpButton, UserButton } from "@clerk/react";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
   return (
-    <div className="w-full h-16 flex items-center justify-between">
+    <div className="w-full h-16 flex items-center justify-between relative">
       {/* {LOGO} */}
 
       <Link to="/" className="items-center flex gap-4 text-xl font-bold">
@@ -36,13 +37,27 @@ const Navbar = () => {
       <div className="hidden md:flex items-center gap-8 xl:gap-12 font-medium">
         <Link to="/">Home</Link>
         <Link to="/">About</Link>
-        <Link to="/">Blog</Link>
+        <Link to="/posts">Blog</Link>
         <Link to="/">Contact</Link>
-        <Link to="/">
-          <button className="py-2 px-4 rounded-3xl bg-green-500 text-white">
-            Login 👋
-          </button>
-        </Link>
+
+        <Show when="signed-out">
+          <Link to="/login">
+            <button className="py-2 px-4 rounded-3xl bg-green-500 text-white cursor-pointer">
+              Login 👋
+            </button>
+          </Link>
+        </Show>
+        <Show when="signed-in">
+          <UserButton />
+        </Show>
+
+        {/* <Show when="signed-out">
+          <SignInButton />
+          <SignUpButton />
+        </Show>
+        <Show when="signed-in">
+          <UserButton />
+        </Show> */}
       </div>
     </div>
   );
