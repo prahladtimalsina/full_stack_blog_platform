@@ -6,3 +6,16 @@ body{
   overflow-x: hidden;
   font-family: "montserrat", sans-serif;
 }
+
+.ql-container{
+  border: none !important;
+}
+
+.ql-toolbar{
+  border: none !important;
+}
+
+
+.ql-editor{
+  border: none !important;
+}
