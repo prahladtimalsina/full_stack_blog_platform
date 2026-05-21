@@ -1,0 +1,20 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "Backend for the blog platform",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Prahlad Timalsina",
+  "license": "ISC",
+  "dependencies": {
+    "@clerk/express": "^2.1.19",
+    "body-parser": "^2.2.2",
+    "express": "^5.2.1",
+    "mongoose": "^9.6.2",
+    "svix": "^1.93.0"
+  }
+}
